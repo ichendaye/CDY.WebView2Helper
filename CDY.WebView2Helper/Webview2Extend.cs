@@ -11,7 +11,7 @@ namespace CDY.WebView2Helper
         /// <param name="webView">WebView2对象</param>
         /// <param name="cacheFolder">缓存文件夹名称</param>
         /// <returns>返回WebView2环境对象</returns>
-        public static async Task<CoreWebView2Environment> CreateEnvironment(this WebView2 webView, string cacheFolder)
+        public static async Task<CoreWebView2Environment> CreateEnvironmentAsync(this WebView2 webView, string cacheFolder)
         {
             // 设置新的数据目录到用户本地应用数据
             string userDataFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), cacheFolder);

@@ -8,6 +8,7 @@
     <Description>webview2工具类</Description>
     <PackageProjectUrl>chendaye.com</PackageProjectUrl>
     <Authors>chendaye</Authors>
+    <Version>1.0.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
