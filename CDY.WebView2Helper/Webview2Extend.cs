@@ -3,15 +3,18 @@ using Microsoft.Web.WebView2.Wpf;
 
 namespace CDY.WebView2Helper
 {
-    public static class Webview2Extend
+    /// <summary>
+    /// WebView2 扩展方法
+    /// </summary>
+    public static class WebView2Extend
     {
         /// <summary>
-        /// 创建一个WebView2环境对象
+        /// 创建WebView2环境并指定数据目录到AppData中
         /// </summary>
         /// <param name="webView">WebView2对象</param>
-        /// <param name="cacheFolder">缓存文件夹名称</param>
+        /// <param name="cacheFolder">数据目录名称</param>
         /// <returns>返回WebView2环境对象</returns>
-        public static async Task<CoreWebView2Environment> CreateEnvironmentAsync(this WebView2 webView, string cacheFolder)
+        public static async Task<CoreWebView2Environment> CreateUserDataFolderEnvironmentAsync(this WebView2 webView, string cacheFolder)
         {
             // 设置新的数据目录到用户本地应用数据
             string userDataFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), cacheFolder);
