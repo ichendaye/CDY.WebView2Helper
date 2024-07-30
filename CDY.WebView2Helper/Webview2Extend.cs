@@ -98,5 +98,20 @@ namespace CDY.WebView2Helper
         {
             webView.CoreWebView2.Settings.IsSwipeNavigationEnabled = false;
         }
+
+        /// <summary>
+        /// 将本地目录映射为站点
+        /// </summary>
+        /// <param name="coreWebView2"></param>
+        /// <param name="hostName">本地域名地址，尽量特殊一点。比如：local.chendaye.local</param>
+        /// <param name="localFolderPath">本地目录地址,完整路径</param>
+        public static void HostNameMapping(this CoreWebView2 coreWebView2, string hostName, string localFolderPath)
+        {
+            coreWebView2.SetVirtualHostNameToFolderMapping(
+                hostName,
+                localFolderPath,
+                CoreWebView2HostResourceAccessKind.Allow
+            );
+        }
     }
 }
